@@ -5,7 +5,8 @@ FROM centos:5
 
 COPY mod_authnz_crowd-2.2.2-1.x86_64.rpm /tmp/
 
-RUN echo $'update\n localinstall /tmp/mod_authnz_crowd-2.2.2-1.x86_64.rpm\n ts run\n' | yum shell -y --nogpgcheck
+RUN 	yum upgrade -y && \
+	echo $'update\n localinstall /tmp/mod_authnz_crowd-2.2.2-1.x86_64.rpm\n ts run\n' | yum shell -y --nogpgcheck
 
 # this module doesn't work (undefined symbols)
 RUN rm /etc/httpd/conf.d/subversion.conf
