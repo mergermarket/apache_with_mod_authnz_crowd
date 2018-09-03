@@ -1,7 +1,7 @@
 # centos 5 support until Mar 31st, 2017. Using this old distro as
 # there are currently few options (https://confluence.atlassian.com/display/CROWD/Integrating+Crowd+with+Apache)
 # Hopefully the pull requests here https://bitbucket.org/atlassian/cwdapache should be integrated in time to upgrade
-FROM centos:6
+FROM centos:7
 
 COPY mod_authnz_crowd-2.2.2-1.el6.x86_64.rpm /tmp/
 COPY httpd.conf /etc/httpd/conf/httpd.conf
